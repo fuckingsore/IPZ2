@@ -4,7 +4,7 @@
   
   Почнемо з базового прикладу роботи з файловою системою. Цей приклад створює каталог, створює файл всередині нього, а потім записує вміст файлу на консоль:
   
-  ` var fs = require('fs');
+  `var fs = require('fs');
 
 fs.mkdir('./newDir',0o777, function (err) {
     if (err) throw err;
@@ -18,4 +18,4 @@ fs.mkdir('./newDir',0o777, function (err) {
             console.log(data);
         });
     });
-}); `
+});`
