@@ -94,4 +94,4 @@ fs.writeFile('./testFile.txt', "changed just now", function (err) {
 
 ### Документи Nodejs для подальшого читання
 -------------------------------------------
-[Документація Node API](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html) дуже детальна та містить перелік усіх можливих команд файлової системи, доступних під час роботи з Nodejs. Модуль `fs` теж має безліч [функцій](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html) для самих різних операцій з файлами і директоріями. 
+[Документація Node API](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html) дуже детальна та містить перелік усіх можливих команд файлової системи, доступних під час роботи з `Nodejs`. Модуль `fs` теж має безліч [функцій](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html) для самих різних операцій з файлами і директоріями. 
