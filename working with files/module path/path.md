@@ -33,3 +33,36 @@ var path = require('path');
 | resolve()  | Визначає вказані шляхи в абсолютний шлях  |
 | sep  | Повертає роздільник сегментів, вказаний для платформи  |
 | win32  | Повертає об'єкт, що містить властивості та методи, властиві Windows  |
+
+### Приклад:
+------------
+
+```js 
+var path = require("path");
+
+// Normalization
+console.log('normalization : ' + path.normalize('/test/test1//2slashes/1slash/tab/..'));
+
+// Join
+console.log('joint path : ' + path.join('/test', 'test1', '2slashes/1slash', 'tab', '..'));
+
+// Resolve
+console.log('resolve : ' + path.resolve('main.js'));
+
+// extName
+console.log('ext name : ' + path.extname('main.js'));
+```
+
+#### Результат:
+
+``` normalization : \test\test1\2slashes\1slash
+joint path : \test\test1\2slashes\1slash
+resolve : D:\Lessons\Fourth_semestr\ipz-2\module_path\main.js
+ext name : .js
+```
+
+### Більше про `path`
+---------------------
+
+Модуль `path` має багато властивостей та методів, з якими ви додатково можете ознайомитись в документації [Node.js v16.0.0 documentation](https://nodejs.org/api/path.html)
+
