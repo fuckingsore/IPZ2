@@ -1,6 +1,6 @@
 ## Модуль fs
 
-   Для роботи з файловою системою node забезпечує модуль "fs". Команди імітують операції POSIX, і більшість методів працюють синхронно або асинхронно. Ми розглянемо, як використовувати обидва, а потім встановимо, що є кращим варіантом. Модуль «FS» має безліч функцій для самих різних операцій з файлами і директоріями. Ось [документація](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html).
+   Для роботи з файловою системою node забезпечує модуль "fs". Команди імітують операції POSIX, і більшість методів працюють синхронно або асинхронно. Ми розглянемо, як використовувати обидва, а потім встановимо, що є кращим варіантом.
 * * *
    ### Робота з файловою системою
    Почнемо з базового прикладу роботи з файловою системою. Цей приклад створює каталог, створює файл всередині нього, а потім записує вміст файлу на консоль:
@@ -27,18 +27,63 @@ fs.mkdir('./newDir',0o777, function (err) {
    
    Приклад можна переписати, використовуючи синхронний підхід:
    
-    var fs = require('fs');
-    fs.mkdirSync('./SecondDirSync',0o777);
-    fs.writeFileSync('./SecondDirSync/messageFile.txt', 'Hello World & Node');
-    var data = fs.readFileSync('./SecondDirSync/messageFile.txt','UTF-8');
-    console.log('File created with contents:');
-    console.log(data);
-    
+```javascript   
+var fs = require('fs');
+fs.mkdirSync('./SecondDirSync',0o777);
+fs.writeFileSync('./SecondDirSync/messageFile.txt', 'Hello World & Node');
+var data = fs.readFileSync('./SecondDirSync/messageFile.txt','UTF-8');
+console.log('File created with contents:');
+console.log(data);
+```
+
    Краще використовувати асинхронний підхід на серверах з великим навантаженням, оскільки синхронні методи спричинять зупинку всього процесу і чекають завершення операції. Це заблокує будь-які вхідні з'єднання та інші події.
 * * *
 ### Інформація про файл
 
    Об'єкт fs.Stats містить інформацію про певний файл або каталог. Це може бути використано для визначення типу об’єкта, з яким ми працюємо. У цьому прикладі ми отримуємо всі файлові об’єкти в каталозі та відображаємо, чи це файл, чи об’єкт каталогу.
+
+```javascript
+var fs = require('fs');
+
+fs.readdir('/Lessons/', function (err, files) {
+    if (err) throw err;
+
+    files.forEach( function (file) {
+        fs.stat('/Lessons/' + file, function (err, stats) {
+            if (err) throw err;
+
+            if (stats.isFile()) {
+                console.log("%s is file", file);
+            }
+            else if (stats.isDirectory ()) {
+                console.log("%s is a directory", file);
+            }
+            console.log('stats:  %s',JSON.stringify(stats));
+        });
+    });
+});
+```
+* * *
+### Перегляд файлів
+
+Метод fs.watchfile відстежує файл і запускає подію як тільки файл змінюється.
    
-   
-   
+```javascript
+var fs = require('fs');
+
+fs.watchFile('./testFile.txt', function (curr, prev) {
+    console.log('the current mtime is: ' + curr.mtime);
+    console.log('the previous mtime was: ' + prev.mtime);
+});
+
+fs.writeFile('./testFile.txt', "changed just now", function (err) {
+    if (err) throw err;
+
+    console.log("file write complete");
+});
+```
+* * *
+### Документи Nodejs для подальшого читання
+
+Модуль «fs» має безліч [функцій](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html) для самих різних операцій з файлами і директоріями. 
+[Документація Node API](https://nodejs.org/dist/latest-v4.x/docs/api/fs.html) дуже детальна та містить перелік усіх можливих команд файлової системи, доступних під час роботи з Nodejs.
