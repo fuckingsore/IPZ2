@@ -9,7 +9,7 @@
 npm install fs-extra
 ```
 
-## Використання 
+### Використання 
 ---------------
 
 `fs-extra` - це незамінна заміна рідного `fs`. Усі методи у `fs` додаються до `fs-extr`a. Усі методи `fs` повертають обіцяне, якщо зворотний виклик не передано.
@@ -39,7 +39,7 @@ const fs = require('fs')
 const fse = require('fs-extra')
 ```
 
-## Sync vs Async vs Async/Await
+### Sync vs Async vs Async/Await
 -------------------------------
 
 Більшість методів за замовчуванням є асинхронними. Усі асинхронні методи повернуть обіцянку, якщо зворотний виклик не передано.
@@ -83,3 +83,35 @@ async function copyFiles () {
 copyFiles()
 ```
 
+###Методи
+---------
+
+Модуль `fs-extra` має безліч [методів](https://github.com/jprichardson/node-fs-extra/blob/master/README.md#methods) для самих різних операцій з файлами і директоріями.
+
+#### Примітка:
+- Ви все ще можете використовувати рідні методи Node.js. Вони проміфікуються і копіюються на `fs-extra`. [Див. примітки.](docs/fs-read-write-writev.md)
+- `walk()` та `walkSync()` було видалено з `fs-extra`. Якщо вам потрібна їх функціональність, то доступні як окремі пакети [`klaw`](https://github.com/jprichardson/node-klaw) та [`klaw-sync`](https://github.com/manidlou/node-klaw-sync).
+
+### Третя сторона
+-----------------
+
+#### CLI
+
+[fse-cli](https://www.npmjs.com/package/@atao60/fse-cli) дозволяє запускати `fs-extra` із консолі або за допомогою скриптів [npm](https://www.npmjs.com).
+
+#### TypeScript
+
+Якщо вам подобається TypeScript, ви можете використовувати `fs-extra` разом з цим: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/fs-extra
+
+#### Перегляд файлів / каталогів
+
+Якщо ви хочете спостерігати за змінами у файлах або каталогах, тоді вам слід скористатися [chokidar](https://github.com/paulmillr/chokidar).
+
+#### Отримати інформацію про файлову систему (пристрої, розділи)
+
+[fs-filesystem](https://github.com/arthurintelligence/node-fs-filesystem) дозволяє читати стан файлової системи хосту, на якому вона запущена. Він повертає інформацію як про пристрої, так і про розділи системи.
+
+#### Різне
+
+- [fs-extra-debug](https://github.com/jdxcode/fs-extra-debug) - надсилає ваші fs-extra виклики до [debug](https://npmjs.org/package/debug).
+- [mfs](https://github.com/cadorn/mfs) - відстежує ваші fs-extra виклики
