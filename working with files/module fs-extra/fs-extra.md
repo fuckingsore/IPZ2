@@ -83,7 +83,7 @@ async function copyFiles () {
 copyFiles()
 ```
 
-###Методи
+### Методи
 ---------
 
 Модуль `fs-extra` має безліч [методів](https://github.com/jprichardson/node-fs-extra/blob/master/README.md#methods) для самих різних операцій з файлами і директоріями.
