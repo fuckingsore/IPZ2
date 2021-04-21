@@ -72,3 +72,80 @@ if (err) {
 ```
 Програма буде шукати та складати список назв файлів для кожного файлу із позначкою, знайденого у поточному робочому шляху та будь-якому додатковому шляху у поточній робочій папці.
 
+### Зміна поточного робочого шляху.
+-----------------------------------
+
+Якщо до `glob` передано три аргументи, другий може бути об'єктом `options`, і одним із багатьох варіантів, який можна змінити, є поточний робочий каталог, який за замовчуванням повертається `process.cwd ()` у `node.js`.
+
+```js
+var glob = require('glob'),
+
+// some options
+    options = {
+
+        cwd: 'node_modules'
+
+    },
+
+// for Files
+    forFiles = function(err,files){ console.log(files);};
+
+// glob it.
+glob('**/*.md', options, forFiles);
+```
+
+### Читання файлів.
+-------------------
+
+`glob` призначений для зіставлення файлів, але коли справа доходить до фактичного читання вмісту файлів, необхідно буде використовувати додаткове рішення в поєднанні з `glob`. Таким чином, це не зовсім повноцінний обхідник файлової системи, але це цінний інструмент для створення обхідника з нуля, який буде підтримувати шаблони `glob`.
+
+```js
+let glob = require('glob'),
+    fs = require('fs');
+
+let readFiles = function (pat, forFile) {
+
+    pat = pat || '*.js';
+    forFile = forFile || function (content) {
+        console.log(content);
+    };
+
+    glob('*.js', function (err, files) {
+
+        if (err) {
+
+            console.log(err);
+
+        } else {
+
+            files.forEach(function (file) {
+
+                fs.readFile(file, function (err, data) {
+
+                    if (err) {
+
+                        console.log(err);
+
+                    } else {
+
+                        forFile(data.toString());
+
+                    }
+
+                });
+
+            });
+
+        }
+
+    });
+
+};
+
+readFiles();
+```
+
+### Висновок.
+-------------
+
+Це відмінне node.js рішення для швидкої роботи з шаблонами `glob`. На даний момент є файл [readme](https://github.com/isaacs/node-glob/blob/master/README.md) проекту, в якому детально описані додаткові параметри, які не описані в цій статті.
