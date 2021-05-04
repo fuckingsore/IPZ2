@@ -1,6 +1,6 @@
 # Робота з файлами, модулі fs, fs-extra, path, glob
 
-Сьогодні ми поговоримо про роботу з файлами в `Node.js`. Зокрема, мова піде про модулі [`fs`](https://github.com/fuckingsore/IPZ2/blob/main/doc/working%20with%20files.md#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C-fs), [`fs-extra`](https://github.com/fuckingsore/IPZ2/blob/main/doc/working%20with%20files.md#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C-fs-extra), `path`  і `glob` - про файлові дескриптори, про шляхи до файлів, про отримання інформації про файли, про їх читання і запис, про роботу з директоріями і так далі.
+Сьогодні ми поговоримо про роботу з файлами в `Node.js`. Зокрема, мова піде про модулі [`fs`](https://github.com/fuckingsore/IPZ2/blob/main/doc/working%20with%20files.md#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C-fs), [`fs-extra`](https://github.com/fuckingsore/IPZ2/blob/main/doc/working%20with%20files.md#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C-fs-extra), `path`  і [`glob`](https://github.com/fuckingsore/IPZ2/blob/main/doc/working%20with%20files.md#%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C-glob) - про файлові дескриптори, про шляхи до файлів, про отримання інформації про файли, про їх читання і запис, про роботу з директоріями і так далі.
 
 ---------------------------------------------------------------------------------------------
 
