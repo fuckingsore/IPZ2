@@ -109,7 +109,7 @@ fs.writeFile('./txt/testFile.txt', "changed just now", function (err) {
 
 ## Модуль `fs-extra`
 
-`fs-extra` додає методи файлової системи, які не входять до власного модуля `fs`, і додає обіцяє підтримку методів `fs`. Він також використовує [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) для запобігання помилкам EMFILE. Це повинна бути заміна замість fs.
+`fs-extra` додає методи файлової системи, які не входять до власного модуля `fs`, і додає підтримку методів `fs`. Він також використовує [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) для запобігання помилкам EMFILE. Це покращена заміна методу `fs`.
 
 ## Установка
 ------------
