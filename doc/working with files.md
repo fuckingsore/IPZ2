@@ -470,5 +470,11 @@ readFiles();
 
 Це відмінне node.js рішення для швидкої роботи з шаблонами `glob`. На даний момент є файл [readme](https://github.com/isaacs/node-glob/blob/master/README.md) проекту, в якому детально описані додаткові параметри, які не описані в цій статті.
 
+------------------------------------------------------------------
+
+## Матеріал підготував 
+* *студент групи ІВ-92 Залога Андрій* - [fuckingsore](https://github.com/fuckingsore)
+
+><a href="https://github.com/fuckingsore/IPZ2" target="_blank">https://github.com/fuckingsore/IPZ2</a>
 
 
