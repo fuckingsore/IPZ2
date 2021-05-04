@@ -23,6 +23,6 @@
 
 3. Встановити всі потрібні залежності командою `npm install`
 
->Доповідь знаходиться [тут](./doc/working with files.md)
+>Доповідь знаходиться [тут](./doc/working_with_files.md)
 
 ><a href="https://github.com/fuckingsore/IPZ2" target="_blank">https://github.com/ForeverProglamer/async-code-in-js</a>
