@@ -1,0 +1,23 @@
+{
+  "name": "working-with-files-in-js",
+  "version": "1.0.0",
+  "description": "Educational project about working with files",
+  "main": "index.js",
+  "dependencies": {
+    "fs-extra": "^9.1.0",
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "jest",
+    "unit",
+    "testing"
+  ],
+  "author": "Andrew Zaloga <zalogandrew@gmail.com>",
+  "license": "ISC"
+}
